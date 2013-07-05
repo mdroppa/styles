@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" page-range-format="minimal" default-locale="en-US">
+<!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
   <info>
     <title>Journal of Thrombosis and Haemostasis</title>
     <id>http://www.zotero.org/styles/journal-of-thrombosis-and-haemostasis</id>
     <link href="http://www.zotero.org/styles/journal-of-thrombosis-and-haemostasis" rel="self"/>
     <link href="http://www.zotero.org/styles/vancouver-brackets" rel="template"/>
-    <link href="http://onlinelibrary.wiley.com/journal/10.1111/%28ISSN%291538-7836/homepage/ForAuthors.html" rel="documentation"/>
+    <link href="http://www.nlm.nih.gov/bsd/uniform_requirements.html" rel="documentation"/>
+    <link href="http://www.wiley.com/bw/submit.asp?ref=1538-7933" rel="documentation"/>
     <author>
       <name>Paul Frappe</name>
       <email>paul.frappe@univ-st-etienne.fr</email>
     </author>
     <category citation-format="numeric"/>
     <category field="medicine"/>
-    <issn>1538-7933</issn>
-    <eissn>1538-7836</eissn>
-    <summary>Vancouver style as outlined by International Committee of Medical Journal Editors Uniform Requirements for Manuscripts Submitted to Biomedical Journals: Sample References. Omitting issue numbers, with numbers in square brackets in the text and a numbered list, with the first 20 authors included in each reference at the end.</summary>
-    <updated>2012-09-27T22:06:38+00:00</updated>
+    <issn>1538-7836</issn>
+    <summary>
+    Vancouver style as outlined by International Committee of Medical Journal Editors Uniform Requirements for Manuscripts Submitted to Biomedical Journals: Sample References. Omitting issue numbers, with numbers in square brackets in the text and a numbered list, with the first 20 authors included in each reference at the end. 
+    </summary>
+    <updated>2013-07-04T20:52:03+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -32,7 +35,7 @@
   </locale>
   <macro name="author">
     <names variable="author">
-      <name sort-separator=" " initialize-with="" name-as-sort-order="all" delimiter=", " delimiter-precedes-last="always"/>
+      <name delimiter-precedes-last="always" et-al-min="20" et-al-use-first="20" initialize-with="" name-as-sort-order="all" sort-separator=" "/>
       <label form="long" prefix=", "/>
       <substitute>
         <names variable="editor"/>
@@ -42,7 +45,7 @@
   <macro name="editor">
     <group delimiter=": ">
       <choose>
-        <if type="chapter paper-conference" match="any">
+        <if type="chapter paper-conference">
           <text term="in" text-case="capitalize-first"/>
         </if>
       </choose>
@@ -105,8 +108,7 @@
         </group>
         <text macro="edition" prefix=" "/>
       </if>
-      <!--add event-name and event-place once they become available-->
-      <else-if type="bill legislation" match="any">
+      <else-if type="bill legislation">
         <group delimiter=", ">
           <group delimiter=".">
             <text variable="container-title" form="short"/>
@@ -164,7 +166,7 @@
           <text macro="accessed-date"/>
         </group>
       </if>
-      <else-if type="bill legislation" match="any">
+      <else-if type="bill legislation">
         <group delimiter=", ">
           <date variable="issued" delimiter=" ">
             <date-part name="month" form="short" strip-periods="true"/>
@@ -204,7 +206,7 @@
   <macro name="journal-location">
     <choose>
       <if type="article-journal article-magazine" match="any">
-        <text variable="volume"/>
+        <text variable="volume" font-weight="bold"/>
       </if>
     </choose>
   </macro>
@@ -235,7 +237,7 @@
         <text macro="container-title" font-style="italic"/>
         <text macro="publisher"/>
         <group>
-          <text macro="date" font-weight="bold"/>
+          <text macro="date" font-weight="normal"/>
           <text macro="journal-location"/>
           <text macro="pages"/>
         </group>
